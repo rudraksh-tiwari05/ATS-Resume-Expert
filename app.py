@@ -1,6 +1,12 @@
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except ModuleNotFoundError:
+    import os
+    import sys
+    sys.stderr.write("Error: python-dotenv module not found. Please install it by running 'pip install python-dotenv'\n")
+    sys.exit(1)
+
 import streamlit as st
-import os
 import io
 import base64
 from PIL import Image
