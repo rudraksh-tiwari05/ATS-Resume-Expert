@@ -1,6 +1,4 @@
 from dotenv import load_dotenv
-load_dotenv()
-
 import streamlit as st
 import os
 import io
@@ -8,6 +6,9 @@ import base64
 from PIL import Image
 import pdf2image
 import google.generativeai as genai
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure Generative AI API
 genai.configure(api_key=os.getenv('Google_api_key'))
